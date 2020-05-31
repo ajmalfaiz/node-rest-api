@@ -12,8 +12,9 @@ mongoose.connect(
   "mongodb+srv://ajmalfaiz:" +
     process.env.MONGO_ATLAS_PWD +
     "@node-rest-shop-vydm3.mongodb.net/test?retryWrites=true&w=majority",
-  { useNewUrlParser: true, useUnifiedTopology: true }
+  { useNewUrlParser: true, useUnifiedTopology: true}
 );
+mongoose.Promise = global.Promise;
 
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
